@@ -114,7 +114,7 @@
     <section class="lab-section">
       <h2>Attribute, Class and Style Binding with <code>v-bind</code></h2>
       <p>Highlighting Specific Authors:</p>
-      <p vbind="highlight">George Orwell</p>
+      <p :class="highlightClass">George Orwell</p>
     </section>
   </div>
 </template>
@@ -133,7 +133,6 @@ const showMessage = ref(false)
 const modernAuthors = computed(() => {
   // TODO: CODE TO FILTER ARRAY OF AUTHORS HERE
   return authors.filter((author) => author.birthYear > 1850)
-  console.log(authors)
 });
 
 // Activity 3: Get all famous works
@@ -153,6 +152,9 @@ const orwell = computed(() => {
 const austen = computed(() => {
   // TODO: CODE TO FIND AUTHOR BY ID HERE
     return authors.filter((author) => author.id === 1)[0]
+})
+const highlightClass = computed(() => {
+  return "highlight"
 })
 </script>
 
